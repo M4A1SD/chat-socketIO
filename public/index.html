@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js" ></script>
+    <script src="index.js"></script>
+    
+    <div id = 'naming'>
+        <h1>
+            pick a name plox
+        </h1>
+        <input id="nickname"></input>
+        <button onclick="setNickname()">Choose</button>
+    </div>
+
+    <div id="float-container">
+        <div id="chatBox">     
+
+        </div>
+        
+        <div id="nameSection">
+            <h2>
+                USER LIST<br>
+            </h2>
+        </div>  
+        <input id = "inpt" ></input>
+        <button onclick="getInput()"> send </button>
+        <button id ='chinaSong' onclick="why()"> Button out of order</button>
+    </div>
+    
+    <script>
+        stage2 = document.getElementById("float-container").style ; //hide chatting stage on start
+        stage2.display = "none" //hide
+
+        var inputPress = document.getElementById("inpt"); //get input box
+        addEventListener("keypress", ()=>{ //listen for key press
+            if (event.key == "Enter"){ //if key is enter
+            getInput(); //start sending message operation
+            }
+        })
+    </script>
+</html>
